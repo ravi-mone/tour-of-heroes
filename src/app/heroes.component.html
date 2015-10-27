@@ -1,0 +1,21 @@
+<div>
+  <h2>My Heroes</h2>
+  <a class="heroes">
+    <a [router-link]="['/HeroDetailComponent']" class="router-link">show details
+    <li *ng-for="#hero of heroes"
+      [ng-class]="getSelectedClass(hero)">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}</a>
+    </li>
+    </a>
+  </ul>
+  <div *ng-if="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} is my hero</h2>
+		<button (click)="gotoDetail()">View Details</button>
+  </div>
+</div><!--
+<a [router-link]="['/Heroes', 'Nested1']">Guestbook Nested 1</a>
+
+<a [router-link]="['/Heroes', 'Nested2']">Guestbook Nested 2</a>
+
+
+<router-outlet></router-outlet>-->
